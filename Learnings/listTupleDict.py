@@ -36,10 +36,27 @@ print(list)
 '''
 
 
-var = set(["Ranjit","Sachin","Vishal"])
-print(var)
-var.add("lion")
+# var = set(["Ranjit","Sachin","Vishal"])
 # print(var)
-# set.clear(var)
-set.discard()
-print(var)
+# var.add("lion")
+# # print(var)
+# # set.clear(var)
+# set.discard()
+# print(var)
+
+a = ('a', 'b', 'c')
+b = (1, 2, 3)
+# c = {'a': 1, 'b': 2, 'c': 3}      # Make a and b like this
+
+result = 0
+if len(a) == len(b):
+    result = dict(zip(a, b))
+print(result)
+
+# input tuple
+inputTuple = ((5, "TutorialsPoint"), (6, "Python"), (7, "Codes"))
+print("The input Tuple:", inputTuple)
+
+# Here we are iterating through each element (pairs) of the tuple using dictionary comprehension and converting it to the dictionary
+resultDictionary = dict((x, y) for x, y in inputTuple)
+print(resultDictionary)

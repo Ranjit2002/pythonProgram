@@ -105,12 +105,23 @@ print(is_vowel("j"))
 # print(f"{test_value2} -> {test_list2} : {result2}")
 
 
-def is_group_member(group_data, n):
-   for value in group_data:
-       if n == value:
-           return True
-   return False
+# def is_group_member(group_data, n):
+#    for value in group_data:
+#        if n == value:
+#            return True
+#    return False
+#
+#
+# print(is_group_member([1, 5, 8, 3], 3))
+# print(is_group_member([5, 8, 3], -1))
+
+# while True:
+#     mail = str(input("Enter your email:- "))
+#     if "@" not in mail:
+#         print("Incorrect email address please include @ in your email")
+#         continue
+#     else:
+#         print("Your Account has been hacked")
+#         break
 
 
-print(is_group_member([1, 5, 8, 3], 3))
-print(is_group_member([5, 8, 3], -1))

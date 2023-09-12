@@ -153,18 +153,133 @@
 #
 # print("The LCM of", num1, "and", num2, "is:", result)
 
-def sum(num1, num2, num3):
-    if num1 == num2 or num2 == num3 or num1 == num3:
-        return 0
-    else:
-        return num1 + num2 + num3
+# def sum(num1, num2, num3):
+#     if num1 == num2 or num2 == num3 or num1 == num3:
+#         return 0
+#     else:
+#         return num1 + num2 + num3
+#
+#
+# a = int(input("Enter first Number:-"))
+# b = int(input("Enter second Number:-"))
+# c = int(input("Enter third Number:-"))
+# d = sum(a, b, c)
+# if d == 0:
+#     print(f"The sum of {a}, {b} and {c} is: {d}")
+# else:
+#     print(f"The sum of {a}, {b} and {c} is: {d}")
+
+# def __init__(self, att1, att2, a=2, b=4):
+#     self.att1 = att1
+#     self.att2 = att2
+#     self.a = a
+#     self.b = b
+
+# class myClass:
+#     def meth(self):
+#         list1 = ["Ranjit", "Elon", "Steve"]
+#         return list1
+#     def name(self, name_list, book_list, book_author):
+#         new_name = []
+#         for i in name_list:
+#             new_name.append(i.lower())
+#
+#         while True:
+#             Name = str(input("Enter name:-"))
+#             name = Name.lower()
+#
+#             if name not in new_name:
+#                 print("You are not a student of our library")
+#             else:
+#                 book_name = int(input("Enter book no.:-"))
+#                 if book_name < 1 or book_name > len(book_list):
+#                     print("\nEnter proper book no.")
+#                     continue
+#                 else:
+#                     book_list.pop(book_name - 1)
+#                     book_author.pop((book_name - 1))
+#                     break
+#         return book_list, book_author
+#
+#
+# c = myClass()
+# name = c.meth()
+# book = ["1. Rich dad poor dad", "2. Power of our subconscious mind", "3. The science of getting rich"]
+# author = ["1. Robert Kiosaki", "2. Jopeph Murphy", "3. Wallace Wattles"]
+# b, a = c.name(name, book, author)
+# print(f"\nBooks:{b}\nAuthor:{a}")
 
 
-a = int(input("Enter first Number:-"))
-b = int(input("Enter second Number:-"))
-c = int(input("Enter third Number:-"))
-d = sum(a, b, c)
-if d == 0:
-    print(f"The sum of {a}, {b} and {c} is: {d}")
-else:
-    print(f"The sum of {a}, {b} and {c} is: {d}")
+def seconds():
+    hour = int(input("Enter hours:-"))
+    minute = int(input("Enter minutes:-"))
+    sec = int(input("Enter seconds:-"))
+    hour_sec = hour * 3600
+    hour_min = minute * 60
+    total_sec = hour_sec + hour_min + sec
+    return hour_sec, hour_min, sec, total_sec
+
+
+# hs, hm, s, ts = seconds()
+# print(f"Hour seconds:{hs}\nMinute seconds:{hm}\nSeconds:{s}\nTotal seconds:{ts}")
+
+# Function to calculate the sum of digits
+# def sum_of_digits(number):
+#     digit_sum = 0
+#     while number > 0:
+#         digit = number % 10
+#         digit_sum += digit
+#         number //= 10
+#     return digit_sum
+#
+#
+# try:
+#     num = int(input("Enter a number: "))
+#     result = sum_of_digits(num)
+#     print(f"The sum of digits of {num} is {result}")
+# except ValueError:
+#     print("Invalid input. Please enter a valid integer.")
+
+# list1 = ["America", "Canada", "Mexico", "Brazil"]
+# list2 = list1
+# # for i in list1:
+# #     list2.append(i)
+# list2.append("India")
+# print(list2)
+
+list1 = ['a', 23, 'b', 65, 'c', 99]
+c = 0
+for i in list1:
+    # if isinstance(i, int):    # This is the most used method to find anything float, int, string and char anything
+    #     c += i
+    if type(i) is int:  # We can use this method also
+        c += i
+
+# print(c)
+
+list2 = [12, 33, 44, 55, 66, 77, 88, 99]
+odd = []
+even = []
+for i in list2:
+    if i % 2 == 0:
+        even.append(i)
+for j in list2:
+    if j % 2 != 0:
+        odd.append(j)
+
+# print(even+odd)
+
+list3 = [1, 2, 2, 3, 3, 4, 5, 6, 7, 4]
+number = []
+# l1 = set()
+# for i in list3:
+#     l1.add(i)
+#
+# print(l1)
+# for i in list3:
+#     if i not in number:
+#         # print(i)
+#         number.append(i)
+
+# print(list3)
+

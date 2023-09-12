@@ -240,3 +240,15 @@ print(d)
 #
 # game()
 
+# def add(n):
+#     a = []
+#     for i in n:
+#         a += i
+#     return a
+#
+#
+# num = int(input("Enter a Number:-"))
+# b = add(num)
+# print(b)
+
+

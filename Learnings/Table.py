@@ -64,6 +64,7 @@ for ch in apple:
 # value = f"{convert:.2f}"
 #
 # print("Your BMI is: ", value)
+"""
 
 questions = ["When was Chandrayaan 3 launched?", "How much is the depth of kola superdeep borehole?",
              "Which one of these is the moon of mars?", "Titan is the moon of which planet?",
@@ -101,3 +102,126 @@ while i < len(questions):
     i += 1
 
 print("Your final score:", score)
+"""
+
+# a = 'My name is ranjit'
+# word = ''
+# for i in range(len(a) -1, -1, -1):
+#     if a[i] == ' ':
+#         old = word[::-1]
+#         print(old)
+#         break
+#     else:
+#         word += a[i]
+
+# for i in range(len(a)-1, -1, -1):
+#     if a[i] == ' ':
+#         print(a[i])
+#         break
+#     else:
+#         print(a[i])
+
+# r = 'ranjit'
+# d = r[0]
+# c = r[1:]
+
+# f = 'gdf' + c + d + 'xzv'
+# print(f)
+
+# na = "My name is ranjit"
+# letter = ''
+# app = []
+# for i in na:
+#     if i == ' ':
+#         app.append(letter)
+#         letter = ''
+#     elif i == len(na)-1:
+#         app.append(letter)
+#     else:
+#         letter += i
+#
+# print(app)
+
+# na = "My nate is ranjit"
+# letter = ''
+# app = []
+#
+# for i in na:
+#     if i == ' ':
+#         app.append(letter)
+#         letter = ''
+#     elif i == na[-1]:
+#         letter += i
+#         app.append(letter)
+#     else:
+#         letter += i
+#
+# print(app)
+
+# na = "My nate is ranjit"
+# letter = ''
+# app = []
+#
+# for index, char in enumerate(na):
+#     if char == ' ':
+#         app.append(letter)
+#         letter = ''
+#     elif index == len(na) - 1:
+#         letter += char
+#         app.append(letter)
+#     else:
+#         letter += char
+#     print(index)
+#     print(char)
+
+"""
+Decoding :-
+If: the word contains less than 3 characters, reverse it
+else:
+    remove 3 random characters from start and end. Now remove the last letter and append to the beginning
+
+Your program should ask whether you want to code or decode
+"""
+
+def decoding(string):
+    list1 = list()
+    word = ''
+    if len(string) == 0:
+        return None
+    for i in string:
+        if i == ' ':
+            if len(word) <= 2:
+                new_wd = word[::-1]
+                list1.append(new_wd)
+                word = ''
+            elif len(word) > 2:
+                c = word[3:-3]
+                b = c[:-1]
+                d = c[-1]
+                f = d + b
+                list1.append(f)
+                word = ''
+        else:
+            word += i
+    s = word[3:-3]
+    t = s[:-1]
+    u = s[-1]
+    v = u + t
+    list1.append(v)
+    new_str = " ".join(list1)
+    print(new_str)
+
+
+a = str(input("Enter a string:-"))
+decoding(a)
+
+
+# yM qEHamenPhx si qLRanjitrPhx WKTndaPhx I ma PQEromfPhx QvymericaAtsH     # Coded String
+
+# a = 'dsganjitrsgh'
+# c = a[3:-3]     # to remove 3 - 3 char from start and end
+# b = c[:-1]      # to remove last char
+# d = c[-1]       # to remove all char except last
+# f = d + b       # concatenating string
+# print(f)        # printing
+

@@ -1,3 +1,4 @@
+"""
 letter = "My name is {} and I am from {}"
 name = "Ranjit"
 country = "America"
@@ -25,3 +26,33 @@ string = "32"
 a = int(string)
 print(type(a))
 print(a)
+"""
+
+# a = "Python is an interpreted high level programming language"
+# print(a[13:24])
+# b = a.split()   # Converts a string into a list
+# print(b[3])
+
+p = "Python is Very easy Language"
+s = c = 0
+for i in p:
+    if i.islower():
+        s += 1
+    elif i.isupper():
+        c += 1
+
+# print(f"Small Letters: {s}\nCapital Letters: {c}")
+
+a = 'Python'
+user = int(input("Enter a Number:-"))
+list1 = list(a)
+for i in list1:
+    if user > len(list1):
+        print("Please enter number less than 7")
+        break
+    else:
+        list1.pop(user-1)
+        pro = " , ".join(list1)
+        print(pro)
+        break
+

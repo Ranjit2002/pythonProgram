@@ -108,6 +108,29 @@ def fahrenheit(n):
 # integer = int(char)
 # print(integer)
 
-integer = 3
-str = str(integer)
-print(str)
+# integer = 3
+# str = str(integer)
+# print(str)
+
+
+# fibonacci(10)
+
+
+# my_list = ["apple", "banana", "cherry"]
+# for index, fruit in enumerate(my_list):
+#     print(f"Index {index}: {fruit}")
+
+
+def details(*a):
+    return a
+
+
+print(details("Ranjit", 34, "Mumbai", 34254547))
+
+
+def nex_details(**b):
+    print(b)
+
+
+nex_details(name="Ranjit", age=34, city="Mumbai", mobile=34636323242)
+

@@ -1,3 +1,4 @@
+"""
 # 1 - Python program to find the square root
 
 def sqrt_num(number):
@@ -126,8 +127,8 @@ def main():
         print(f"{num} is not a prime number.")
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
 
 # 10 - Python program to print all prime numbers in an interval
 
@@ -238,7 +239,7 @@ c = float(input("Enter the divisor:-"))
 
 divisible(a, b, c)
 
-# 17 - Python program to find
+# 17 - Python program to find hcf
 
 def find_hcf(x, y):
     while y != 0:
@@ -285,7 +286,6 @@ if palindrome(a):
 else:
     print("Not Palindrome")
 
-
 # 20 - Python program to remove punctuations from a string
 import string
 def punctuation(input_string):
@@ -302,7 +302,6 @@ def punctuation(input_string):
 s = str(input("Enter a String:-"))
 b = punctuation(s)
 print(b)
-
 
 # 21 - Python program to sort words in alphabetic order
 def sort(input_string):
@@ -351,7 +350,6 @@ print("Difference (set2 - set1):", difference_set2)
 # Symmetric Difference (elements in either set, but not both)
 symmetric_difference_set = set1 ^ set2
 print("Symmetric Difference:", symmetric_difference_set)
-
 # 2:-
 
 # Helper function to perform union of two sets
@@ -404,7 +402,6 @@ print(f"Difference (set2 - set1): {d}")
 e = symmetric(first, second)
 print(f"Symmetric Difference: {e}")
 
-
 # 23 - Python program to count the number of each vowel
 
 def count_vowels(input_string):
@@ -424,12 +421,11 @@ def count_vowels(input_string):
 
 
 # Example usage
-input_string = "Hello, how are you?"
+input_string = "My name is Ranjit"
 result = count_vowels(input_string)
 
 for vowel, count in result.items():
     print(f'{vowel}: {count}')
-
 
 # 24 - Python program to interchange first and last element in a list
 
@@ -545,7 +541,6 @@ my_list = [1, 2, 3, 4, 1, 3, 4, 5, 7]
 dupl = duplicate(my_list)
 print("Duplicate numbers in the list are:", dupl)
 
-
 # 30 - Remove multiple elements from a list in python
 
 my_list = [11, 5, 17, 18, 23, 50]
@@ -561,7 +556,6 @@ my_list = [x for x in my_list if x not in elements_to_remove]
 #     my_list.remove(element)
 
 print(my_list)
-
 
 # 31 - Given a python list of numbers. Turn every item of a list into its square given:
 # list = [1, 2, 3, 4, 5, 6, 7]
@@ -580,6 +574,7 @@ def square(list1):
 list2 = [1, 2, 3, 4, 5, 6, 7]
 b = square(list2)
 print(b)
+"""
 
 def iterate(list1, list2):
     if len(list1) == 0 == len(list2):

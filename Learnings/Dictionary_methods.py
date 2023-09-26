@@ -28,6 +28,8 @@ print(result)
 inputTuple = ((5, "TutorialsPoint"), (6, "Python"), (7, "Codes"))
 print("The input Tuple:", inputTuple)
 
-# Here we are iterating through each element (pairs) of the tuple using dictionary comprehension and converting it to the dictionary
+
+# Here we are iterating through each element (pairs) of the tuple using dictionary comprehension and converting it to
+# the dictionary
 resultDictionary = dict((x, y) for x, y in inputTuple)
 print(resultDictionary)

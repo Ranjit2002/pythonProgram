@@ -44,5 +44,37 @@
 # bubble_sort(my_list)
 # print("Sorted list:", my_list)
 
+def is_armstrong_number(num):
+    # Convert the number to a string to count its digits
+    num_str = str(num)
+    num_digits = len(num_str)
+
+    # Calculate the sum of digits each raised to the power of num_digits
+    digit_sum = sum(int(digit) ** num_digits for digit in num_str)
+
+    # Check if the sum is equal to the original number
+    return digit_sum == num
 
 
+def find_armstrong_numbers(start, end):
+    armstrong_numbers = []
+    for num in range(start, end + 1):
+        if is_armstrong_number(num):
+            armstrong_numbers.append(num)
+    return armstrong_numbers
+
+
+# Input range
+# start_range = int(input("Enter the starting number: "))
+# end_range = int(input("Enter the ending number: "))
+#
+# armstrong_numbers = find_armstrong_numbers(start_range, end_range)
+#
+# if armstrong_numbers:
+#     print("Armstrong numbers in the range:", armstrong_numbers)
+# else:
+#     print("No Armstrong numbers found in the specified range.")
+
+a = ["Python is an interpreted programming language"]
+b = "".join(a)
+print(b, type(b))

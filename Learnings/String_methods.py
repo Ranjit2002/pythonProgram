@@ -40,34 +40,45 @@ print(str1.endswith("!!!"))  # This will return true if str1 last 3 digits is !!
 print(str1.endswith("to", 4, 10))  # This will check that from index 4 to 10 "to" is coming or not
 '''
 
-str1 = "He's name is Dan. He is an honest man"
-print(str1.find("is"))  # This will return the index of "is" if "is" was not there in the String it will return -1
-print(str1.index("Dan"))  # If Dan was not there in the String it will return error if it is there it will return the index
-str1 = "WelcomeToTheConsole"
-print(str1.isalnum())  # If str1 is an AlphaNumeric string then it will return true otherwise false
-str1 = "Welcome"
-print(str1.isalpha())  # If str1 have any numbers inside it then it will return false otherwise true
+# str1 = "He's name is Dan. He is an honest man"
+# print(str1.find("is"))  # This will return the index of "is" if "is" was not there in the String it will return -1
+# print(str1.index("Dan"))  # If Dan was not there in the String it will return error if it is there it will return the index
+# str1 = "WelcomeToTheConsole"
+# print(str1.isalnum())  # If str1 is an AlphaNumeric string then it will return true otherwise false
+# str1 = "Welcome"
+# print(str1.isalpha())  # If str1 have any numbers inside it then it will return false otherwise true
+#
+# str1 = "hello world"
+# print(str1.islower())
+#
+# str1 = "My name is Ranjit \n"
+# print(str1.isprintable())  # If all the characters are printable then it will return true is some cases false when \n is there in the string
+#
+# str1 = "    "
+# print(str1.isspace())  # It will return true if str1 have wide spaces like using tab button otherwise not and if the string was empty
+#
+# str1 = "World Health Organisation"
+# print(str1.istitle())  # If every word first letter is capital then it will return true otherwise false
+#
+# str1 = "I am Ranjit"
+# print(str1.istitle())  # Like this
+#
+# str1 = "Python is a Interpreted language"
+# print(str1.startswith("Python"))
+#
+# str1 = "My name is RANjit"
+# print(str1.swapcase())  # It changes the uppercase ot lowercase and lowercase to uppercase
+#
+# str2 = "His name is Dan. He is an honest man"
+# print(str2.title())  # It will convert all words first letter into capital
 
-str1 = "hello world"
-print(str1.islower())
 
-str1 = "My name is Ranjit \n"
-print(str1.isprintable())  # If all the characters are printable then it will return true is some cases false when \n is there in the string
+import random
 
-str1 = "    "
-print(str1.isspace())  # It will return true if str1 have wide spaces like using tab button otherwise not and if the string was empty
+# Define the set of characters you want to choose from
+characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
-str1 = "World Health Organisation"
-print(str1.istitle())  # If every word first letter is capital then it will return true otherwise false
+# Generate a random 3-character sequence
+random_sequence = ''.join(random.choice(characters) for _ in range(3))
 
-str1 = "I am Ranjit"
-print(str1.istitle())  # Like this
-
-str1 = "Python is a Interpreted language"
-print(str1.startswith("Python"))
-
-str1 = "My name is RANjit"
-print(str1.swapcase())  # It changes the uppercase ot lowercase and lowercase to uppercase
-
-str2 = "His name is Dan. He is an honest man"
-print(str2.title())  # It will convert all words first letter into capital
+print(random_sequence)

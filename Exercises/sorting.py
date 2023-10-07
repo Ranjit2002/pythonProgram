@@ -75,6 +75,49 @@ def find_armstrong_numbers(start, end):
 # else:
 #     print("No Armstrong numbers found in the specified range.")
 
-a = ["Python is an interpreted programming language"]
-b = "".join(a)
-print(b, type(b))
+# a = ["Python is an interpreted programming language"]
+# b = "".join(a)
+# print(b, type(b))
+
+# a = 'Ranjit'
+# print(a.index('j'))
+# j = 0
+#
+# for i in a:
+#     if i == 'j':
+#         break
+#     j += 1
+#
+# print(j)
+
+# a = ["Ranjit"]
+# b = "".join(a)
+# print(b)
+#
+# if b.isalpha():
+#     print(True)
+# else:
+#     print(False)
+
+
+def replace_underscores(input_str, replace_chars):
+    result = ""
+    char_index = 0
+
+    for char in input_str:
+        if char == "_":
+            if char_index < len(replace_chars):
+                result += replace_chars[char_index]
+                char_index += 1
+        else:
+            result += char
+
+    return result
+
+
+# Example usage:
+b = "Ran___"
+replacement_chars = "dom"
+result = replace_underscores(b, replacement_chars)
+
+print(result)

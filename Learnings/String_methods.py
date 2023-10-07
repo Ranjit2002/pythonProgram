@@ -73,12 +73,72 @@ print(str1.endswith("to", 4, 10))  # This will check that from index 4 to 10 "to
 # print(str2.title())  # It will convert all words first letter into capital
 
 
-import random
+# import random
+#
+# # Define the set of characters you want to choose from
+# characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+#
+# # Generate a random 3-character sequence
+# random_sequence = ''.join(random.choice(characters) for _ in range(3))
+#
+# print(random_sequence)
 
-# Define the set of characters you want to choose from
-characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+# value = int(input("Enter a Number:-"))
+# if value < 0:
+#     raise ValueError("Input must be a non-negative number.")
+# else:
+#     print(value)
 
-# Generate a random 3-character sequence
-random_sequence = ''.join(random.choice(characters) for _ in range(3))
+# words = ["Hello", "World", "Python"]
+#
+# result = '*'.join(words)
+#
+# print(result)
 
-print(random_sequence)
+# string = "Hello World"
+#
+# # Adding the word "beautiful" after the 6th character
+# result = string[:6] + "r " + string[6:]
+#
+# print(result)
+# import random
+#
+# a = ["America", "Russia", "China", "India"]
+# rand = random.choice(a)
+# print(rand)
+
+# while True:
+#     b = str(input("Enter a char:-"))
+#     if b in rand:
+#         print("Yes")
+#         break
+#     else:
+#         print("No")
+
+
+a = "Mango"
+# print(len(a))
+# print(a, "is a", len(a), "letter word")
+# print(a[0:4])
+# print(a[1:4])
+# print(a[:4])
+# print(a[:])
+# print(a[:-3])
+# print(a[:len(a)-3])
+# print(a[-1:len(a)-3])
+# print(a[-3:-1])     # 2:4
+
+# m = "Harry"
+# print(m[-4:-2])
+#
+# e = ["_1", "_2", "_3", "_4", "_5"]
+# b = a.index('n')                        # This will return the index of n which is 3
+# print(b)                                # This will print
+# e.pop(b-1)                              # This will remove the element
+# e.insert(b, 'n')                # This will insert the element
+# print(e)                                # This will print e
+
+# print(eval("2+4"))
+
+b = (34, 556)
+print(type(b))

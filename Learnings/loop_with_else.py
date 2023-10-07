@@ -39,10 +39,21 @@ else:
 #     time.sleep(0.5)  # Sleep for half a second
 #     print('\b', end='', flush=True)  # Move the cursor back one position
 
-import time
+# import time
+#
+# text = "Loading..."
+# for char in text:
+#     print(char, end='', flush=True)
+#     time.sleep(0.8)  # Sleep for half a second
+#     print('\b', end='', flush=True)  # Move the cursor back one position
 
-text = "Loading..."
-for char in text:
-    print(char, end='', flush=True)
-    time.sleep(0.5)  # Sleep for half a second
-    print('\b', end='', flush=True)  # Move the cursor back one position
+# try:
+#     a = int(input("Enter a Number:-"))
+#     for i in range(1, 11):
+#         print(f"{a} X {i} = {a * i}")
+#     else:
+#         print("Table over!")
+# except Exception as e:
+#     print(type(e))
+
+print("Ran___")

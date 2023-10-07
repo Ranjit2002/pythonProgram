@@ -92,12 +92,17 @@ fibonacci(a)
 '''
 
 
-def numbers(n):
-    for i in range(1, n+1):
-        print(i)
+# def numbers(n):
+#     for i in range(1, n+1):
+#         print(i)
+#
+#
+# a = int(input("Enter up to how many numbers you want to print: "))
+# numbers(a)
 
 
-a = int(input("Enter up to how many numbers you want to print: "))
-numbers(a)
+a = ["Apple", "Mango", "Grapes", "Cherry", "Banana"]
 
-
+# list1 = [i for i, j in enumerate(a)]
+list1 = [i for i in a]
+print(list1)

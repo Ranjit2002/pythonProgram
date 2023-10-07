@@ -24,8 +24,8 @@ dic3 = {
 # for i in range(len(dic2)):
 #     print(dic2.keys())
 
-for i in dic2:
-    print(dic2[i])
+# for i in dic2:
+#     print(dic2[i])
 
 dict1 = {
     "name": "Ranjit", "age": 34, "eligible": True
@@ -41,6 +41,18 @@ dict1 = {
 # for i in dict1.keys():      # This will print which values you have set
 #     print(f"The value set for the key is {i} is {dict1[i]}")
 
-# for key, value in dict1.items():        # This method is used to print the key and values of all the elements of the dict1
-#     print(f"The value corresponding to the key {key} is {value}")
+# for key, value in dict1.items():        # This method is used to print the key and values of all the elements of
+# the dict1 print(f"The value corresponding to the key {key} is {value}")
+
+a = 'successfully'
+dict2 = dict()
+
+for i in a:
+    if i in dict2:
+        dict2[i] += 1
+    else:
+        dict2[i] = 1
+
+
+print(dict2)
 

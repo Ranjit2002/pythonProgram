@@ -1,0 +1,3 @@
+import Ranjit
+
+Ranjit.welcome()

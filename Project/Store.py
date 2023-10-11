@@ -1,8 +1,7 @@
 import random
 class store:
     def __init__(self):
-        self.Bank_amount = 50000
-        self.pin = random.randrange(1000, 9999)
+        self.Bank_amount = 150000
         self.l1 = ["Shirt", "Mobile", "Laptop", "Shoes", "Refrigerator", "Smart TV"]
         self.w = ["Amazon", "Flipkart", "Myntra", "Shopsy"]
         self.pay = ["Debit card", "UPI apps", "Cash on delivery"]
@@ -126,11 +125,12 @@ class store:
     def payment(self, payment_option, daam):
         i = 1
         while i <= 5:
+            pin = random.randrange(1000, 9999)
             try:
                 if payment_option == 1:
-                    print(f"Pin = {self.pin}\n")
+                    print(f"Pin = {pin}\n")
                     x = int(input("Enter card pin : "))
-                    if x == self.pin:
+                    if x == pin:
                         if self.Bank_amount < daam:
                             print(f"\nYou don't have enough money to purchase this {self.l1[pro-1]}\n")
                             break
@@ -143,9 +143,9 @@ class store:
                         i += 1
                         continue
                 elif payment_option == 2:
-                    print(f"Pin = {self.pin}\n")
+                    print(f"Pin = {pin}\n")
                     y = int(input("Enter UPI pin : "))
-                    if y == self.pin:
+                    if y == pin:
                         if self.Bank_amount < daam:
                             print(f"\nYou don't have enough money to purchase this {self.l1[pro-1]}\n")
                             break
@@ -225,7 +225,7 @@ while True:
             a.payment(g, f)
             print()
         elif choice == 3:
-            print(f"\nYour bank balance is {a.UPI()}")
+            print(f"\nYour bank balance is {a.UPI()}\n")
         elif choice == 4:
             break
         else:

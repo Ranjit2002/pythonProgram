@@ -152,6 +152,8 @@ class Hin_bank:
                             print(f"{self.paise} se kam paise enter kare\n")
                             continue
                         else:
+                            print(f"You have {5-i} chance remaining")
+                            i += 1
                             print("Phir prayas kare\n")
                             continue
                     elif i == 5:

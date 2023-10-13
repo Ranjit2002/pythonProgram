@@ -15,6 +15,13 @@ def cube(x):
     print(x*x*x)
 
 
-cube(13)
-print(cube.__doc__)
+# cube(13)
+# print(cube.__doc__)
 
+a = []
+b = [2, 3, 4, 5]
+c = 0
+for i in range(len(b)):
+    c += b[i]
+
+print(c)

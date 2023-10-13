@@ -161,3 +161,30 @@ print("The sum of even Numbers up to ", a, " is:- ", count)
 #         print("Skip the iteration")
 #         continue
 #     print(5, "X", i, "=", 5*i)
+
+class num1:
+    def __init__(self):
+        print("My name is Ranjit\nMy name is Steve")
+
+    def even(self):
+        for i in range(1, 11):
+            if i % 2 == 0:
+                print(i)
+
+
+class num2(num1):
+    def __init__(self):
+        super().__init__()
+        print("\nMy name is harry\nMy name is Bill")
+
+    def odd(self):
+        for i in range(1, 11):
+            if i % 2 != 0:
+                print(i)
+
+
+a = num2()
+print()
+a.even()
+print()
+a.odd()

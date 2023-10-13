@@ -125,12 +125,22 @@ def details(*a):
     return a
 
 
-print(details("Ranjit", 34, "Mumbai", 34254547))
+# print(details("Ranjit", 34, "Mumbai", 34254547))
 
 
 def nex_details(**b):
     print(b)
 
 
-nex_details(name="Ranjit", age=34, city="Mumbai", mobile=34636323242)
+# nex_details(name="Ranjit", age=34, city="Mumbai", mobile=34636323242)
 
+# a = {"Ranjit": 1, "Steve": 2, "Elon": 3, "Bill": 4}
+# print("Yes") if 2 in a else print("No")
+
+# a = ["Mobile", "Laptop", "Fridge"]
+# b = [12000, 40000, 34000]
+
+a = "mobile"
+b = list()
+b.append(a)
+print(b)

@@ -123,9 +123,9 @@ class store:
                 print(ec)
 
     def payment(self, payment_option, daam):
+        pin = random.randrange(1000, 9999)
         i = 1
         while i <= 5:
-            pin = random.randrange(1000, 9999)
             try:
                 if payment_option == 1:
                     print(f"Pin = {pin}\n")

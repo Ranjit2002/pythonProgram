@@ -83,11 +83,25 @@ class questions:
             print(a)
             a, b = b, a + b
 
-    def armstrong_number(self, n):
-        list1 = [int(digit) for digit in str(n)]
-        # for i in list1:
-        #     for j in range(x):
-        print(list1)
+    def armstrong_number(self, number):
+        num_str = str(number)
+        num_digit = len(num_str)
+        total = sum(int(digit) ** num_digit for digit in num_str)
+        return total == number
+
+    def arm_num_in_interval(self, start, end):
+        for i in range(start, end+1):
+            if a.armstrong_number(i):
+                print(i)
+
+    def sum_of_n_num(self, end):
+        c = 0
+        for i in range(1, end+1):
+            c += i
+        print(f"The sum of {end} natural number is {c}")
+
+    def anonymous_function(self):
+        list1 = list(map(lambda x: ))
 
 
 a = questions()
@@ -160,4 +174,16 @@ a = questions()
 # b = int(input("Enter a number:- "))
 # a.fibonacci_series(b)
 
-a.armstrong_number(345)
+# b = int(input("Enter a Number:- "))
+# c = a.armstrong_number(b)
+# if c:
+#     print(f"{b} is an Armstrong Number")
+# else:
+#     print(f"{b} is not an Armstrong Number")
+
+# b = int(input("Enter starting:- "))
+# c = int(input("Enter ending:- "))
+# a.arm_num_in_interval(b, c)
+
+b = int(input("Enter end:- "))
+a.sum_of_n_num(b)

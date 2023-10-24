@@ -16,15 +16,15 @@
 # print(b + c)
 
 
-# def fibonacci_series(n):
-#     a, b = 0, 1
-#     for _ in range(n):
-#         print(a, end=" ")
-#         a, b = b, a + b
-#
-#
-# x = int(input("Enter a Number to print fibonacci series up to:- "))
-# fibonacci_series(x)
+def fibonacci_series(n):
+    a, b = 0, 1
+    for _ in range(n):
+        print(a)
+        a, b = b, a + b
+
+
+x = int(input("Enter a Number to print fibonacci series up to:- "))
+fibonacci_series(x)
 
 # def fibonacci_generator(n):
 #     a, b = 0, 1
@@ -432,8 +432,8 @@ def palindrome(string):
     return False
 
 
-a = str(input("Enter:-"))
-if palindrome(a):
-    print(True)
-else:
-    print(False)
+# a = str(input("Enter:-"))
+# if palindrome(a):
+#     print(True)
+# else:
+#     print(False)

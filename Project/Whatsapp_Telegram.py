@@ -4,6 +4,7 @@
 class Whatsapp:
     def __init__(self, App_name):
         self.app = App_name
+
     def voice_call(self):
         print(f"{self.app} support voice call")
 

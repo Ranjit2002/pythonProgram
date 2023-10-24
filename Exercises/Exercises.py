@@ -100,8 +100,78 @@ class questions:
             c += i
         print(f"The sum of {end} natural number is {c}")
 
-    def anonymous_function(self):
-        list1 = list(map(lambda x: ))
+    def anonymous_function(self, end):
+        list1 = list(map(lambda x: 2 ** x, range(end+1)))
+        for i in list1:
+            print(i)
+
+    def num_div_by_ano_num(self, divider):
+        a = [i for i in range(1, 101)]
+        b = list(filter(lambda x: x % divider == 0, a))
+        for i in b:
+            print(i)
+
+    def dec_to_bin_oct_hex(self, num):
+        print(f"The conversion of decimal number {num} is: ")
+        print(f"{bin(num)} in binary")
+        print(f"{oct(num)} in octal")
+        print(f"{hex(num)} in hexadecimal")
+
+    def ASCII_value(self, string):
+        a = str(string)
+        print(f"The ASCII value of {string} is {ord(a)}")
+
+    # def HCF_GCD(self, num1, num2):
+    #     if num1 > num2:
+    #         smaller = num2
+    #     else:
+    #         smaller = num1
+    #     for i in range(1, smaller+1):
+    #         if (num1 % i == 0) and (num2 % i == 0):
+    #             hcf = i
+    #     return hcf
+
+    def HCF_GCD(self, x, y):
+        while y:
+            x, y = y, x % y
+        return x
+
+    def factors_of_a_num(self, num):
+        print(f"The factors of {num} is : ")
+        for i in range(1, num+1):
+            if num % i == 0:
+                print(i)
+
+    def shuffle_cards(self):
+        import itertools
+        deck = list(itertools.product(range(1, 14), ["Clubs", "Hearts", "Spades", "Diamonds"]))
+        random.shuffle(deck)
+        print(deck)
+        for i in range(5):
+            print(deck[i][0], "of", deck[i][1])
+
+    def calendar(self):
+        import calendar
+        year = int(input("Enter year > "))
+        month = int(input("Enter month > "))
+        calendar = calendar.month(year, month)
+        print(calendar)
+
+    def fibo_recursion(self, n):
+        if n <= 0:
+            return "Invalid input"
+        elif n == 1:
+            return 0
+        elif n == 2:
+            return 1
+        else:
+            return self.fibo_recursion(n - 1) + self.fibo_recursion(n - 2)
+
+    def sum_using_recursion(self, n):
+        if n == 0 or n == 1:
+            return n
+        else:
+            return n + self.sum_using_recursion(n - 1)
 
 
 a = questions()
@@ -185,5 +255,37 @@ a = questions()
 # c = int(input("Enter ending:- "))
 # a.arm_num_in_interval(b, c)
 
-b = int(input("Enter end:- "))
-a.sum_of_n_num(b)
+# b = int(input("Enter end:- "))
+# a.sum_of_n_num(b)
+
+# b = int(input("Enter end:- "))
+# a.anonymous_function(b)
+
+# b = int(input("Enter divider:- "))
+# a.num_div_by_ano_num(b)
+
+# b = int(input("Enter a Number:- "))
+# a.dec_to_bin_oct_hex(b)
+
+# b = input("Enter only one number, symbol or character to find the ASCII:- ")
+# a.ASCII_value(b)
+
+# b = int(input("Enter first Number:- "))
+# c = int(input("Enter second Number:- "))
+# d = a.HCF_GCD(b, c)
+# print(f"The HCF/GCD of {b} and {c} is {d}")
+
+# b = int(input("Enter a Number:- "))
+# a.factors_of_a_num(b)
+
+# a.shuffle_cards()
+
+# a.calendar()
+
+# b = int(input("Enter a Number:- "))
+# c = a.fibo_recursion(b)
+# print(c)
+
+b = int(input("Enter a Number:- "))
+c = a.sum_using_recursion(b)
+print(c)

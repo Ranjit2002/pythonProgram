@@ -23,7 +23,7 @@ class Library:
 
     def show_available_books(self):
         if not self.books:
-            print("\nNo books are there in the library\n")
+            print("\nCurrently no books are there in the library\n")
         else:
             print()
             for i in range(len(self.books)):
@@ -31,13 +31,18 @@ class Library:
             print()
 
     def check_len_book_no_of_book(self):
-        if self.no_of_books == len(self.books):
+        if not self.books:
+            print("\nCurrently no books are there in the library\n")
+        elif self.no_of_books == len(self.books):
             print("\nNumber of books are equal to len of books\n")
         else:
             print("\nNumber of books and len of books are different\n")
 
     def get_no_of_books(self):
-        print(f"\nNumber of books in the library is {self.no_of_books}\n")
+        if not self.books:
+            print("\nCurrently no books are there in the library\n")
+        else:
+            print(f"\nNumber of books in the library are {self.no_of_books}\n")
 
 
 a = Library()

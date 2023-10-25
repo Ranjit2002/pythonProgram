@@ -2,7 +2,6 @@ import random
 class store:
     def __init__(self):
         self.Bank_amount = 50000
-        self.pin = random.randrange(1000, 9999)
         self.l1 = ["Shirt", "Mobile", "Laptop", "Shoes", "Refrigerator", "Smart TV"]
         self.w = ["Amazon", "Flipkart", "Myntra", "Shopsy"]
         self.pay = ["Debit card", "UPI apps", "Cash on delivery"]
@@ -12,7 +11,7 @@ class store:
         self.shoes = None
         self.appliance = None
         self.smartTV = None
-        self.comp = random.randrange(10, 30)
+        self.comp = random.randint(10, 30)
         self.shr_pr = [500, 600, 650, 700, 750, 1000]
         self.mo_pr = [14000, 16000, 17500, 20000]
         self.lap_pr = [35000, 40000, 37000, 43000]
@@ -124,34 +123,35 @@ class store:
                 print(ec)
 
     def payment(self, payment_option, daam):
+        pin = random.randrange(1000, 9999)
         i = 1
         while i <= 5:
             try:
                 if payment_option == 1:
-                    print(f"Pin = {self.pin}\n")
+                    print(f"Pin = {pin}\n")
                     x = int(input("Enter card pin : "))
-                    if x == self.pin:
-                        if self.Bank_amount < daam:
-                            print(f"\nYou don't have enough money to purchase this {self.l1[pro-1]}\n")
+                    if x == pin:
+                        if self.Bank_amount > 0 and daam <= self.Bank_amount:
+                            self.Bank_amount -= daam
+                            print(f"\nYou purchased {self.l1[pro - 1]} in {daam} rupees")
                             break
                         else:
-                            self.Bank_amount -= daam
-                            print(f"\nYou purchased {self.l1[pro-1]} in {daam} rupees")
+                            print(f"\nYou don't have enough money to purchase this {self.l1[pro-1]}\n")
                             break
                     else:
                         print(f"Oops! wrong pin please try again\nYou have {5-i} chance remaining\n")
                         i += 1
                         continue
                 elif payment_option == 2:
-                    print(f"Pin = {self.pin}\n")
+                    print(f"Pin = {pin}\n")
                     y = int(input("Enter UPI pin : "))
-                    if y == self.pin:
-                        if self.Bank_amount < daam:
-                            print(f"\nYou don't have enough money to purchase this {self.l1[pro-1]}\n")
+                    if y == pin:
+                        if self.Bank_amount > 0 and daam <= self.Bank_amount:
+                            self.Bank_amount -= daam
+                            print(f"\nYou purchased {self.l1[pro - 1]} in {daam} rupees")
                             break
                         else:
-                            self.Bank_amount -= daam
-                            print(f"\nYou purchased {self.l1[pro-1]} in {daam} rupees")
+                            print(f"\nYou don't have enough money to purchase this {self.l1[pro-1]}\n")
                             break
                     else:
                         print(f"Oops! wrong pin please try again\nYou have {5-i} chance remaining\n")
@@ -169,68 +169,69 @@ class store:
                 print(er)
 
 
-a = store()
-i = 1
-while i < 2:
-    a.choose_website()
-    print()
-    a.select_item()
-    print()
-    d, e = a.discount()
-    print()
-    f = a.price(d, e)
-    a1 = a.compare(f)
-    if a1 == 2:
-        break
-    g = a.select_payment_option()
-    print()
-    b = a.UPI()
-    a.payment(g, f)
-    i += 1
-print()
-while True:
-    try:
-        print("1 --> Purchase anything else\n2 --> Compare with other websites\n3 --> See bank balance\n4 --> Exit")
-        choice = int(input("Enter your choice:- "))
-        if choice == 1:
-            print()
-            a.choose_website()
-            print()
-            a.select_item()
-            print()
-            d, e = a.discount()
-            print()
-            f = a.price(d, e)
-            a1 = a.compare(f)
-            if a1 == 2:
-                continue
-            g = a.select_payment_option()
-            print()
-            b = a.UPI()
-            a.payment(g, f)
-            print()
-        elif choice == 2:
-            print()
-            a.choose_website()
-            print()
-            d, e = a.discount()
-            print()
-            f = a.price(d, e)
-            a1 = a.compare(f)
-            if a1 == 2:
-                continue
-            g = a.select_payment_option()
-            print()
-            b = a.UPI()
-            a.payment(g, f)
-            print()
-        elif choice == 3:
-            print(f"\nYour bank balance is {a.UPI()}")
-        elif choice == 4:
+if __name__ == "__main__":
+    a = store()
+    i = 1
+    while i < 2:
+        a.choose_website()
+        print()
+        a.select_item()
+        print()
+        d, e = a.discount()
+        print()
+        f = a.price(d, e)
+        a1 = a.compare(f)
+        if a1 == 2:
             break
-        else:
-            print("Please enter number between 1 to 4")
-            continue
-    except Exception as exc:
-        print(type(exc))
-        print(exc, "\n")
+        g = a.select_payment_option()
+        print()
+        b = a.UPI()
+        a.payment(g, f)
+        i += 1
+    print()
+    while True:
+        try:
+            print("1 --> Purchase anything else\n2 --> Compare with other websites\n3 --> See bank balance\n4 --> Exit")
+            choice = int(input("Enter your choice:- "))
+            if choice == 1:
+                print()
+                a.choose_website()
+                print()
+                a.select_item()
+                print()
+                d, e = a.discount()
+                print()
+                f = a.price(d, e)
+                a1 = a.compare(f)
+                if a1 == 2:
+                    continue
+                g = a.select_payment_option()
+                print()
+                b = a.UPI()
+                a.payment(g, f)
+                print()
+            elif choice == 2:
+                print()
+                a.choose_website()
+                print()
+                d, e = a.discount()
+                print()
+                f = a.price(d, e)
+                a1 = a.compare(f)
+                if a1 == 2:
+                    continue
+                g = a.select_payment_option()
+                print()
+                b = a.UPI()
+                a.payment(g, f)
+                print()
+            elif choice == 3:
+                print(f"\nYour bank balance is {a.UPI()}")
+            elif choice == 4:
+                break
+            else:
+                print("Please enter number between 1 to 4")
+                continue
+        except Exception as exc:
+            print(type(exc))
+            print(exc, "\n")

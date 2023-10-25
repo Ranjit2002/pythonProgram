@@ -1,4 +1,6 @@
 import random
+
+
 class questions:
     def add_2_numbers(self, a, b):
         return a + b
@@ -66,7 +68,7 @@ class questions:
         print(x)
 
     def celsius_to_fahrenheit(self, celsius):
-        return (celsius * 9/5) + 32
+        return (celsius * 9 / 5) + 32
 
     def factorial(self, n):
         if n == 0 or n == 1:
@@ -75,7 +77,7 @@ class questions:
 
     def multiplication_table(self, n):
         for i in range(1, 11):
-            print(f"{n} X {i} = {n*i}")
+            print(f"{n} X {i} = {n * i}")
 
     def fibonacci_series(self, n):
         a, b = 0, 1
@@ -90,18 +92,18 @@ class questions:
         return total == number
 
     def arm_num_in_interval(self, start, end):
-        for i in range(start, end+1):
+        for i in range(start, end + 1):
             if a.armstrong_number(i):
                 print(i)
 
     def sum_of_n_num(self, end):
         c = 0
-        for i in range(1, end+1):
+        for i in range(1, end + 1):
             c += i
         print(f"The sum of {end} natural number is {c}")
 
     def anonymous_function(self, end):
-        list1 = list(map(lambda x: 2 ** x, range(end+1)))
+        list1 = list(map(lambda x: 2 ** x, range(end + 1)))
         for i in list1:
             print(i)
 
@@ -138,7 +140,7 @@ class questions:
 
     def factors_of_a_num(self, num):
         print(f"The factors of {num} is : ")
-        for i in range(1, num+1):
+        for i in range(1, num + 1):
             if num % i == 0:
                 print(i)
 
@@ -175,11 +177,34 @@ class questions:
 
     def star(self, n):
         num = 1
-        for i in range(1, n+1):
+        for i in range(1, n + 1):
             for j in range(i):
                 print(num, end=" ")
                 num += 1
             print()
+
+    def factorial_using_recursion(self, n):
+        if n == 0 or n == 1:
+            return 1
+        else:
+            return n * self.factorial_using_recursion(n - 1)
+
+    def dec_to_bin_using_recursion(self, n):
+        if n > 1:
+            self.dec_to_bin_using_recursion(n // 2)
+        print(n % 2, end="")
+
+    def add_two_matrices(self):
+        mat1 = [1, 2, 3,
+                4, 5, 6,
+                7, 8, 9],
+
+        mat2 = [9, 8, 7,
+                6, 5, 4,
+                3, 2, 1]
+
+        for i in mat1:
+
 
 
 a = questions()
@@ -298,4 +323,9 @@ a = questions()
 # c = a.sum_using_recursion(b)
 # print(c)
 
-a.star(5)
+# a.star(5)
+
+# c = a.factorial_using_recursion(5)
+# print(c)
+
+a.dec_to_bin_using_recursion(32)

@@ -173,6 +173,14 @@ class questions:
         else:
             return n + self.sum_using_recursion(n - 1)
 
+    def star(self, n):
+        num = 1
+        for i in range(1, n+1):
+            for j in range(i):
+                print(num, end=" ")
+                num += 1
+            print()
+
 
 a = questions()
 
@@ -286,6 +294,8 @@ a = questions()
 # c = a.fibo_recursion(b)
 # print(c)
 
-b = int(input("Enter a Number:- "))
-c = a.sum_using_recursion(b)
-print(c)
+# b = int(input("Enter a Number:- "))
+# c = a.sum_using_recursion(b)
+# print(c)
+
+a.star(5)

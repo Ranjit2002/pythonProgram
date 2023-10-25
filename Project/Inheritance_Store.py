@@ -89,8 +89,6 @@ class payment(price_discount):
     def __init__(self):
         super().__init__()
         self.Bank_amount = 150000
-        self.product = list()
-        self.product_price = list()
 
     def purchase_or_not(self):
         while True:
@@ -116,14 +114,19 @@ class payment_options(payment):
     def pay_options(self):
         while True:
             try:
-                print("1 --> Debit card\n2 --> UPI apps\n3 --> Cash on delivery")
-                global opt
-                opt = int(input("Enter your choice:- "))
-                if 0 < opt < 4:
-                    return opt
+                if self.Bank_amount > 0 and final_price <= self.Bank_amount:
+                    print("1 --> Debit card\n2 --> UPI apps\n3 --> Cash on delivery")
+                    global opt
+                    opt = int(input("Enter your choice:- "))
+                    if 0 < opt < 4:
+                        return opt
+                    else:
+                        print("Please enter number between 1 to 3\n")
+                        continue
                 else:
-                    print("Please enter number between 1 to 3\n")
-                    continue
+                    print(f"\nYou don't have enough money to purchase this {self.items[tem-1]}\n"
+                          f"You only have {self.Bank_amount} rupees in your account")
+                    return 20
             except Exception as e:
                 print(type(e))
                 print(e, "\n")
@@ -162,65 +165,92 @@ class payment_options(payment):
                           f"It will be delivered in 4 to 5 days\n")
                     break
 
+class money_transfer(payment_options):
+    def transfer_amount(self):
+        while True:
+            try:
+                whom = str(input("Enter to whom you want to transfer:- "))
+                money = int(input("Enter how much rupees you want to transfer:- "))
+                if 0 < money <= self.Bank_amount:
+                    print(f"Successfully transferred {money} rupees to {whom}\n")
+                    self.Bank_amount -= money
+                    break
+                else:
+                    print(f"You don't have enough money\nYou only have {self.Bank_amount} rupees in your account\n")
+                    break
+            except Exception as e:
+                print(type(e))
+                print(e, "\n")
 
-a = payment_options()
-i = 1
-while i < 2:
-    a.choose_website()
-    print()
-    a.choose_items()
-    print()
-    f, g = a.price_before_discount()
-    a.price_after_discount(f, g)
-    ca = a.purchase_or_not()
-    if ca == 2:
-        break
-    print()
-    a.pay_options()
-    print()
-    a.select_option()
-    i += 1
-while True:
-    try:
-        print("\n1 --> Purchase anything else\n2 --> Compare with other websites\n3 --> See bank balance\n4 --> Exit")
-        en = int(input("Enter your choice:- "))
-        if en == 1:
-            print()
-            a.choose_website()
-            print()
-            a.choose_items()
-            print()
-            f, g = a.price_before_discount()
-            a.price_after_discount(f, g)
-            ca = a.purchase_or_not()
-            if ca == 2:
-                continue
-            print()
-            a.pay_options()
-            print()
-            a.select_option()
-            print()
-        elif en == 2:
-            print()
-            a.choose_website()
-            print()
-            f, g = a.price_before_discount()
-            a.price_after_discount(f, g)
-            ca = a.purchase_or_not()
-            if ca == 2:
-                continue
-            print()
-            a.pay_options()
-            print()
-            a.select_option()
-            print()
-        elif en == 3:
-            print(f"\nYour bank balance is {a.bank_balance()} rupees")
-        elif en == 4:
+
+if __name__ == "__main__":                      # 95
+    a = money_transfer()
+    i = 1
+    while i < 2:
+        a.choose_website()
+        print()
+        a.choose_items()
+        print()
+        f, g = a.price_before_discount()
+        a.price_after_discount(f, g)
+        ca = a.purchase_or_not()
+        if ca == 2:
             break
-        else:
-            print("Please enter number between 1 to 4")
-            continue
-    except Exception as exc:
-        print(type(exc))
-        print(exc)
+        print()
+        f = a.pay_options()
+        if f == 20:
+            break
+        print()
+        a.select_option()
+        i += 1
+    while True:
+        try:
+            print("\n1 --> Purchase anything else\n2 --> Compare with other websites\n3 --> See bank balance\n"
+                  "4 --> Transfer money\n5 --> Exit")
+            en = int(input("Enter your choice:- "))
+            if en == 1:
+                print()
+                a.choose_website()
+                print()
+                a.choose_items()
+                print()
+                f, g = a.price_before_discount()
+                a.price_after_discount(f, g)
+                ca = a.purchase_or_not()
+                if ca == 2:
+                    continue
+                print()
+                f = a.pay_options()
+                if f == 20:
+                    continue
+                print()
+                a.select_option()
+                print()
+            elif en == 2:
+                print()
+                a.choose_website()
+                print()
+                f, g = a.price_before_discount()
+                a.price_after_discount(f, g)
+                ca = a.purchase_or_not()
+                if ca == 2:
+                    continue
+                print()
+                f = a.pay_options()
+                if f == 20:
+                    continue
+                print()
+                a.select_option()
+                print()
+            elif en == 3:
+                print(f"\nYour bank balance is {a.bank_balance()} rupees")
+            elif en == 4:
+                a.transfer_amount()
+            elif en == 5:
+                break
+            else:
+                print("Please enter number between 1 to 4")
+                continue
+        except Exception as exc:
+            print(type(exc))
+            print(exc)

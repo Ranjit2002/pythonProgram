@@ -40,3 +40,27 @@ telegram.video_call()
 telegram.chat()
 telegram.status()
 telegram.payment()
+
+
+# def largest():
+#     c = 0
+#     list1 = [23, 45, 78, 435, 43, 2, 67, 357, 42, 89]
+#     for i in list1:
+#         if i > c:
+#             c = i
+#     print(c)
+#
+#
+# largest()
+#
+#
+# def smallest():
+#     list1 = [23, 45, 78, 435, 43, 2, 67, 357, 42, 89]
+#     c = list1[0]
+#     for i in range(len(list1)-1):
+#         if list1[i] < c:
+#             c = list1[i]
+#     print(c)
+#
+#
+# smallest()

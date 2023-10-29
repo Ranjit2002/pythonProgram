@@ -1,6 +1,5 @@
 import random
 
-
 # def armstrong(number):
 #     num_str = str(number)
 #     num_digits = len(num_str)
@@ -73,6 +72,7 @@ import random
 #         y = z
 #         z = x
 
+"""
 def fibo(n):
     a, b = 0, 1
     for i in range(n):
@@ -82,3 +82,124 @@ def fibo(n):
 
 a = int(input("Enter a Number:- "))
 fibo(a)
+
+
+def matrices_addition():
+    mat1 = [[11, 25, 32],
+            [14, 55, 26],
+            [72, 83, 39]]
+
+    mat2 = [[49, 68, 27],
+            [16, 65, 24],
+            [53, 22, 41]]
+
+    mat3 = [[0, 0, 0] for _ in range(len(mat1))]
+
+    print("First Matrix:- ")
+    for row in mat1:
+        string = ' '.join(map(str, row))
+        print(string)
+    print()
+
+    print("Second Matrix:- ")
+    for row in mat2:
+        string = ' '.join(map(str, row))
+        print(string)
+    print()
+
+    for i in range(len(mat1)):
+        for j in range(len(mat1[i])):
+            mat3[i][j] = mat1[i][j] * mat2[i][j]
+
+    print("Sum of First and Second Matrix:- ")
+    for row in mat3:
+        string = ' '.join(map(str, row))
+        print(string)
+
+    for i in range(len(mat1)):
+        for j in range(len(mat1[0])):
+            mat3[i][j] = mat1[i][j] + mat2[i][j]
+        print()
+
+    for row in mat3:
+        res = ' '.join(map(str, row))
+        print(res)
+
+
+matrices_addition()
+
+def transpose_matrix():
+    a = [49, 68, 27,
+         16, 65, 24,
+         53, 22, 41]
+
+    num_rows = 3
+    num_columns = 3
+    transposed_a = []
+
+    for j in range(num_columns):
+        new_row = []
+        for i in range(num_rows):
+            new_row.append(a[i * num_columns + j])
+        transposed_a.append(new_row)
+
+    for row in transposed_a:
+        print(' '.join(map(str, row)))
+
+
+# transpose_matrix()
+
+print(f"Pin: {random.randint(1000, 9999)}")
+
+class encap:
+    # _name = "Ranjit"
+    # __b = 20
+
+    def __init__(self, name, age):
+        self._name = name
+        self.__age = age
+
+    def show(self):
+        print(f"The name of the user is {self._name} and the age of the user is {self.__age}")
+
+
+class new_enc(encap):
+
+    def new_show(self):
+        print(f"Name: {self._name}, Age: {self.__age}")      # AttributeError: 'new_enc' object has no attribute '_new_enc__age'    # This is an example of encapsulation that's why we can't access any private object outside the class or any other class which inherits that class
+
+
+a = new_enc("Ranjit", 21)
+a.show()
+a.new_show()
+"""
+
+class Employee:
+    def __init__(self, first_name, last_name, salary):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.salary = salary
+
+    @classmethod    # Using class method as alternative constructor
+    def from_full_name(cls, full_name, salary):
+        first_name, last_name = full_name.split()
+        return cls(first_name, last_name, salary)
+
+    def get_full_name(self):
+        return f"{self.first_name} {self.last_name}"
+
+
+# a = Employee("Ranjit", "Vishwakarma", 1000000)
+# b = Employee.from_full_name("Steve Jobs", 50000)
+#
+# print(a.get_full_name())
+# print(b.get_full_name())
+
+def palindrome(string):
+    s = ''.join(filter(str.isalnum, string)).lower()
+    return s == string[::-1]
+
+
+a = "Ranjit"
+b = palindrome(a)
+print(b)

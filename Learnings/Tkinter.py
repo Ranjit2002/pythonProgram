@@ -1,7 +1,7 @@
 """
 from tkinter import *
 
-window = Tk()
+window = Tk()       # We can use anything instead of window
 window.title("Welcome to TKINTER")
 window.mainloop()
 

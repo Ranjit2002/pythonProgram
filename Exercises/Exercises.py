@@ -203,8 +203,16 @@ class questions:
                 6, 5, 4,
                 3, 2, 1]
 
-        for i in mat1:
+        mat3 = [[0, 0, 0] for _ in range(len(mat1))]
 
+        # for i in range(len(mat1)):
+        #     for j in range(len(mat1[0])):
+        #         mat3[i][j] = mat1[i][j] + mat2[i][j]
+        #     print()
+
+        for row in mat1:
+            string = " ".join(map(str, row))
+            print(string)
 
 
 a = questions()
@@ -328,4 +336,6 @@ a = questions()
 # c = a.factorial_using_recursion(5)
 # print(c)
 
-a.dec_to_bin_using_recursion(32)
+# a.dec_to_bin_using_recursion(32)
+
+a.add_two_matrices()

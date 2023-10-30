@@ -174,13 +174,14 @@ a.show()
 a.new_show()
 """
 
+
 class Employee:
     def __init__(self, first_name, last_name, salary):
         self.first_name = first_name
         self.last_name = last_name
         self.salary = salary
 
-    @classmethod    # Using class method as alternative constructor
+    @classmethod  # Using class method as alternative constructor
     def from_full_name(cls, full_name, salary):
         first_name, last_name = full_name.split()
         return cls(first_name, last_name, salary)
@@ -200,6 +201,42 @@ def palindrome(string):
     return s == string[::-1]
 
 
-a = "Ranjit"
-b = palindrome(a)
-print(b)
+# a = "Ranjit"
+# b = palindrome(a)
+# print(b)
+
+def rem_punctuations(string):
+    punctuations = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+    new_str = list(string)
+    while True:
+        for i in punctuations:
+            if i in new_str:
+                new_str.remove(i)
+
+
+#     name = ''.join(new_str)
+#     print(name)
+#
+#
+# a = "My! name$##% is Ranjit@#$^%"
+# rem_punctuations(a)
+
+def remove_punctuation(input_string):
+    # Define a string to store the result without punctuation
+    result = ""
+
+    # Define a string containing all common punctuation characters
+    punctuation = '''!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~'''
+
+    # Iterate through the characters in the input string
+    for char in input_string:
+        # Check if the character is not in the punctuation string
+        if char not in punctuation:
+            result += char  # Add non-punctuation characters to the result string
+
+    return result
+
+# Example usage:
+input_string = "Hello, World! This is an example sentence with punctuations!!!"
+cleaned_string = remove_punctuation(input_string)
+print(cleaned_string)

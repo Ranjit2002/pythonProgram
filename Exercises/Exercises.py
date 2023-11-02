@@ -195,18 +195,18 @@ class questions:
         print(n % 2, end="")
 
     def add_two_matrices(self):
-        mat1 = [1, 2, 3,
-                4, 5, 6,
-                7, 8, 9],
+        mat1 = [[11, 25, 32],
+                [14, 55, 26],
+                [72, 83, 39]]
 
-        mat2 = [9, 8, 7,
-                6, 5, 4,
-                3, 2, 1]
+        mat2 = [[49, 68, 27],
+                [16, 65, 24],
+                [53, 22, 41]]
 
         mat3 = [[0, 0, 0] for _ in range(len(mat1))]
 
         # for i in range(len(mat1)):
-        #     for j in range(len(mat1[0])):
+        #     for j in range(len(mat1[i])):
         #         mat3[i][j] = mat1[i][j] + mat2[i][j]
         #     print()
 
@@ -339,3 +339,4 @@ a = questions()
 # a.dec_to_bin_using_recursion(32)
 
 a.add_two_matrices()
+

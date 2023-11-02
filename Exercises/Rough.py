@@ -82,7 +82,7 @@ def fibo(n):
 
 a = int(input("Enter a Number:- "))
 fibo(a)
-
+"""
 
 def matrices_addition():
     mat1 = [[11, 25, 32],
@@ -172,7 +172,6 @@ class new_enc(encap):
 a = new_enc("Ranjit", 21)
 a.show()
 a.new_show()
-"""
 
 
 class Employee:
@@ -201,42 +200,28 @@ def palindrome(string):
     return s == string[::-1]
 
 
-# a = "Ranjit"
+# a = "12321"
 # b = palindrome(a)
 # print(b)
 
-def rem_punctuations(string):
-    punctuations = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
-    new_str = list(string)
-    while True:
-        for i in punctuations:
-            if i in new_str:
-                new_str.remove(i)
+def fibonacci(n):
+    a, b = 0, 1
+    for i in range(n):
+        print(a)
+        a, b = b, a + b
 
 
-#     name = ''.join(new_str)
-#     print(name)
-#
-#
-# a = "My! name$##% is Ranjit@#$^%"
-# rem_punctuations(a)
+# fibonacci(10)
 
-def remove_punctuation(input_string):
-    # Define a string to store the result without punctuation
-    result = ""
+def palindrome(string):
+    lo = string.lower()
+    s = string[::-1]
+    return s == lo
 
-    # Define a string containing all common punctuation characters
-    punctuation = '''!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~'''
 
-    # Iterate through the characters in the input string
-    for char in input_string:
-        # Check if the character is not in the punctuation string
-        if char not in punctuation:
-            result += char  # Add non-punctuation characters to the result string
+# a = "12321"
+# if palindrome(a):
+#     print("Palindrome")
+# else:
+#     print("Not Palindrome")
 
-    return result
-
-# Example usage:
-input_string = "Hello, World! This is an example sentence with punctuations!!!"
-cleaned_string = remove_punctuation(input_string)
-print(cleaned_string)

@@ -32,7 +32,7 @@ class Employee:
 
 class Programmer(Employee):
     def __init__(self, name, Id, lang):
-        super().__init__(name, Id)  # Calling constructor using super keyword
+        super().__init__(name, Id)  # Calling parent class constructor using super keyword
         self.lang = lang
 
 

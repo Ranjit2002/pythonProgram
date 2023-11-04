@@ -37,11 +37,13 @@ class Programmer(Employee):
 
 
 a = Employee("Steve", 234)
+print(a.__dict__)
 print(a.name)
 print(a.id)
 print()
 
 b = Programmer("Ranjit", 124, "Python")
+print(b.__dict__)
 print(b.name)
 print(b.id)
 print(b.lang)
@@ -49,10 +51,24 @@ print()
 
 # This is from another class
 
-from Magic_Dunder_methods import Employee1
+# from Magic_Dunder_methods import Employee1
+#
+# c = Employee1("Ranjit")
+# print(c)
+# print(str(c))
+# print(repr(c))
+# c()
 
-c = Employee1("Ranjit")
-print(c)
-print(str(c))
-print(repr(c))
-c()
+# i = 1
+# while i < 10:
+#     if i == 8:
+#         exit()
+#     print(i)
+#     i += 1
+
+a = [12, 34, 65, 87, 89]
+
+if not a:
+    print("Empty")
+else:
+    print("Not Empty")

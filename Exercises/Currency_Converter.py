@@ -67,3 +67,4 @@ print()
 a.singapore()
 print()
 a.australia()
+

@@ -28,13 +28,13 @@ m = methods()
 # print()
 # m.rev_star()
 def recursion(n):
-    if n == 0:
-        return 0
+    if n == 0 or n == 1:
+        return n
     else:
         return n + recursion(n - 1)
 
 
-# b = recursion(7)
+# b = recursion(13)
 # print(b)
 
 def fibonacci(n):
@@ -67,6 +67,14 @@ def rec_star(n):
             print("*", end=" ")
         print()
 
+def pattern(n):
+    for i in range(n):
+        for j in range(n-i):
+            print("*", end=" ")
+        print()
+
+
+# pattern(10)
 
 # rec_star(5)
 
@@ -143,9 +151,18 @@ def odd(n):
         return odd(n-2)
 
 
-a = int(input("Enter Number to find odd Number:-"))
-b = odd(a)
-print(b)
+# a = int(input("Enter Number to find odd Number:-"))
+# b = odd(a)
+# print(b)
 
 def palindrome(n):
-    pass
+    to_lower = n.lower()
+    rev = to_lower[::-1]
+    return to_lower == rev
+
+
+a = str(input("Enter a string:- "))
+if palindrome(a):
+    print(f"{a} is a Palindrome string")
+else:
+    print(f"{a} is not a Palindrome string")

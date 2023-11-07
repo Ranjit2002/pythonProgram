@@ -1,70 +1,91 @@
-class currency:
+# Create a currency converter which converts Indian currency into any 5 country currency
+class Currency:
     def __init__(self):
-        self.America = 83.05
-        self.England = 88.22
-        self.Kuwait = 268.69
-        self.Singapore = 60.75
-        self.Australia = 52.82
+        self.Dollar = 83.28
+        self.Euro = 88.93
+        self.Dinar = 269.73
+        self.Rial = 216.35
+        self.Franc = 92.42
 
-    def america(self):
+    def Dollar_to_Inr(self):
         while True:
             try:
-                rupee = int(input("Enter how many rupees:- "))
-                print(f"{rupee} Indian rupees is equals to {rupee / self.America:.2f} US dollars")
+                print()
+                rupee = float(input("Enter how many rupees:- "))
+                print(f"{rupee} Indian rupees is equals to {rupee / self.Dollar:.2f} Dollars\n")
                 break
             except Exception as e:
                 print(type(e))
                 print(e, "\n")
 
-    def england(self):
+    def Euro_to_Inr(self):
         while True:
             try:
-                rupee = int(input("Enter how many rupees:- "))
-                print(f"{rupee} Indian rupees is equals to {rupee / self.England:.2f} EU euros")
+                print()
+                rupee = float(input("Enter how many rupees:- "))
+                print(f"{rupee} Indian rupees is equals to {rupee / self.Euro:.2f} Euros\n")
                 break
             except Exception as e:
                 print(type(e))
                 print(e, "\n")
 
-    def kuwait(self):
+    def Dinar_to_Inr(self):
         while True:
             try:
-                rupee = int(input("Enter how many rupees:- "))
-                print(f"{rupee} Indian rupees is equals to {rupee / self.Kuwait:.2f} Kuwaiti dinars")
+                print()
+                rupee = float(input("Enter how many rupees:- "))
+                print(f"{rupee} Indian rupees is equals to {rupee / self.Dinar:.2f} Dinar\n")
                 break
             except Exception as e:
                 print(type(e))
                 print(e, "\n")
 
-    def singapore(self):
+    def Rial_to_Inr(self):
         while True:
             try:
-                rupee = int(input("Enter how many rupees:- "))
-                print(f"{rupee} Indian rupees is equals {rupee / self.Singapore:.2f} Singapore dollars")
+                print()
+                rupee = float(input("Enter how many rupees:- "))
+                print(f"{rupee} Indian rupees is equals {rupee / self.Rial:.2f} Rial\n")
                 break
             except Exception as e:
                 print(type(e))
                 print(e, "\n")
 
-    def australia(self):
+    def Franc_to_Inr(self):
         while True:
             try:
-                rupee = int(input("Enter how many rupees:- "))
-                print(f"{rupee} Indian rupees is equals to {rupee / self.Australia:.2f} Australian dollars")
+                print()
+                rupee = float(input("Enter how many rupees:- "))
+                print(f"{rupee} Indian rupees is equals to {rupee / self.Franc:.2f} Franc\n")
                 break
             except Exception as e:
                 print(type(e))
                 print(e, "\n")
 
 
-a = currency()
-a.america()
-print()
-a.england()
-print()
-a.kuwait()
-print()
-a.singapore()
-print()
-a.australia()
-
+if __name__ == '__main__':
+    a = Currency()
+    while True:
+        try:
+            print("1 --> Dollar to Rupees\n2 --> Euro to Rupees\n3 --> Dinar to Rupees\n4 --> Rial to Rupees\n"
+                  "5 --> Franc to Rupees\n6 --> Exit")
+            choice = float(input("Enter your choice:- "))
+            if choice == 1:
+                a.Dollar_to_Inr()
+            elif choice == 2:
+                a.Euro_to_Inr()
+            elif choice == 3:
+                a.Dinar_to_Inr()
+            elif choice == 4:
+                a.Rial_to_Inr()
+            elif choice == 5:
+                a.Franc_to_Inr()
+            elif choice == 6:
+                break
+            else:
+                print("\nPlease enter number between 1 to 6\n")
+                continue
+        except Exception as ex:
+            print()
+            print(type(ex))
+            print(ex, "\n")

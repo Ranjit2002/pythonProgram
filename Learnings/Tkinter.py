@@ -307,20 +307,21 @@ import tkinter
 #     studname = e2.get()
 #     coursename = e3.get()
 #     feee = e4.get()
-#     mysqldb = mysql.connector.connect(host="local host", user="root", password='root', database="payroll_PYT65")
+#     mysqldb = mysql.connector.connect(host="localhost", user="root", password='root', database="payroll_PYT65")
 #     mycursor = mysqldb.cursor()
 #
 #     try:
-#         sql = "INSERT INTO registeration (id, empname, mobile.salary) VALUES (Ss, Ss, Ss, Ss)"
+#         sql = "INSERT INTO registration (id, empname, mobile.salary) VALUES (%s, %s, %s, %s)"
 #         val = (studid, studname, coursename, feee)
+#         mycursor.execute(sql, val)
 #         mysqldb.commit()
 #         lastid = mycursor.lastrowid
-#         messagebox.showinfo("information", "Employee inserted successfully...")
+#         messagebox.showinfo("information", "Employee inserted successfully")
 #         e1.delete(0, END)
 #         e2.delete(0, END)
 #         e3.delete(0, END)
 #         e4.delete(0, END)
-#         e1.foucs.set()
+#         e1.focus.set()
 #     except Exception as e:
 #         print(e)
 #         mysqldb.rollback()
@@ -435,104 +436,259 @@ import tkinter
 #
 # root.mainloop()
 
+# from tkinter import *
+#
+# def btnClick(number):
+#     global val
+#     val = val + str(number)
+#     data.set(val)
+#
+#
+# def btnClear():
+#     global val
+#     val = ""
+#     data.set("")
+#
+#
+# def btnEqual():
+#     global val
+#     result = str(eval(val))
+#     print(result)
+#     data.set(result)
+#
+#
+# root = Tk()
+# root.title("Calculator")
+# root.geometry('361x381+500+200')
+# val = ""
+# data = StringVar()
+# display = Entry(root, textvariable=data, bd=29, bg="Powder blue", justify="right", font=("Arial", 20))
+# # Border
+# display.grid(row=0, columnspan=4)
+#
+# # First row
+# btn7 = Button(root, text="7", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(7))
+# btn7.grid(row=1, column=0)
+#
+# btn8 = Button(root, text="8", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(8))
+# btn8.grid(row=1, column=1)
+#
+# btn9 = Button(root, text="9", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(9))
+# btn9.grid(row=1, column=2)
+#
+# btn_add = Button(root, text="+", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick('+'))
+# btn_add.grid(row=1, column=3)
+#
+# #############
+#
+# btn4 = Button(root, text="4", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(4))
+# btn4.grid(row=2, column=0)
+#
+# btn5 = Button(root, text="5", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(5))
+# btn5.grid(row=2, column=1)
+#
+# btn6 = Button(root, text="6", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(6))
+# btn6.grid(row=2, column=2)
+#
+# btn_sub = Button(root, text="-", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick('-'))
+# btn_sub.grid(row=2, column=3)
+#
+# ##############
+#
+# btn1 = Button(root, text="1", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(1))
+# btn1.grid(row=3, column=0)
+#
+# btn2 = Button(root, text="2", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(2))
+# btn2.grid(row=3, column=1)
+#
+# btn3 = Button(root, text="3", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(3))
+# btn3.grid(row=3, column=2)
+#
+# btn_mul = Button(root, text="*", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick("*"))
+# btn_mul.grid(row=3, column=3)
+#
+# ##############
+#
+# btnc = Button(root, text="C", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=btnClear)
+# btnc.grid(row=4, column=0)
+#
+# btn0 = Button(root, text="0", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(0))
+# btn0.grid(row=4, column=1)
+#
+# btn00 = Button(root, text="00", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick("00"))
+# btn00.grid(row=4, column=2)
+#
+# btn_eql = Button(root, text="÷", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=btnEqual)
+# btn_eql.grid(row=4, column=3)
+#
+# ################
+#
+# btn_back = Button(root, text="<-", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick("<-"))
+# btn_back.grid(row=5, column=0)
+#
+# btn_per = Button(root, text="%", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick("%"))
+# btn_per.grid(row=5, column=1)
+#
+# btn_div = Button(root, text="÷", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick("÷"))
+# btn_div.grid(row=5, column=2)
+#
+# btn_eql = Button(root, text="=", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=btnEqual)
+# btn_eql.grid(row=4, column=3)
+#
+#
+# root.mainloop()
+
+#############################
+
+import tkinter as tk
+from tkinter import ttk, messagebox
+import mysql.connector
 from tkinter import *
 
-def btnClick(number):
-    global val
-    val = val + str(number)
-    data.set(val)
+
+def GetValue(event):
+    e1.delete(0, END)
+    e2.delete(0, END)
+    e3.delete(0, END)
+    e4.delete(0, END)
+    row_id = listBox.selection()[0]
+    select = listBox.set(row_id)
+    e1.insert(0, select["id"])
+    e2.insert(0, select["empname"])
+    e3.insert(0, select["mobile"])
+    e4.insert(0, select["salary"])
 
 
-def btnClear():
-    global val
-    val = ""
-    data.set("")
+def Add():
+    studid = e1.get()
+    studname = e2.get()
+    coursename = e3.get()
+    fee = e4.get()
+    mysqldb = mysql.connector.connect(host="localhost", user="root", password="root", database="pyt71A")
+    mycursor = mysqldb.cursor()
+
+    try:
+        sql = "INSERT INTO registration (id,empname,mobile,salary)VALUES (%s,%s,%s,%s)"
+        val = (studid, studname, coursename, fee)
+        mycursor.execute(sql, val)
+        mysqldb.commit()
+        lastid = mycursor.lastrowid
+        messagebox.showinfo("information", "Employee inserted succesfully")
+        e1.delete(0, END)
+        e2.delete(0, END)
+        e3.delete(0, END)
+        e4.delete(0, END)
+        e1.focus.set()
+    except Exception as e:
+        print(e)
+        mysqldb.rollback()
+        mysqldb.close()
 
 
-def btnEqual():
-    global val
-    result = str(eval(val))
-    print(result)
-    data.set(result)
+def update():
+    studid = e1.get()
+    studname = e2.get()
+    coursename = e3.get()
+    fee = e4.get()
+    mysqldb = mysql.connector.connect(host="localhost", user="root", password="root", database="Pyt71")
+    mycursor = mysqldb.cursor()
+
+    try:
+        sql = "Update registration set empname=%s,mobile=%s,salary=%s,where id=%s"
+        val = (studname, coursename, fee, studid)
+        mycursor.execute(sql, val)
+        mysqldb.commit()
+        lastid = mycursor.lastrowid
+        messagebox.showinfo("information", "Record updated successfully")
+
+        e1.delete(0, END)
+        e2.delete(0, END)
+        e3.delete(0, END)
+        e4.delete(0, END)
+        e1.focus.set()
+
+    except Exception as e:
+        print(e)
+        mysqldb.rollback()
+        mysqldb.close()
+
+
+def delete():
+    studid = e1.get()
+
+    mysqldb = mysql.connector.connect(host="localhost", user="root", password="root", database="Pyt71")
+    mycursor = mysqldb.cursor()
+
+    try:
+        sql = "delete from registration where id =%s"
+        val = (studid,)
+        mycursor.execute(sql, val)
+        mysqldb.commit()
+        lastid = mycursor.lastrowid
+        messagebox.showinfo("information", "Record deleted successfully")
+
+        e1.delete(0, END)
+        e2.delete(0, END)
+        e3.delete(0, END)
+        e4.delete(0, END)
+        e1.focus.set()
+
+    except Exception as e:
+        print(e)
+        mysqldb.rollback()
+        mysqldb.close()
+
+
+def show():
+    mysqldb = mysql.connector.connect(host="localhost", user="root", password="root", database="Pyt71")
+    mycursor = mysqldb.cursor()
+    mycursor.execute("SELECT id,empname,mobile,salary FROM registration")
+    records = mycursor.fetchall()
+    print(records)
+
+    for i, (id, stname, course, fee) in enumerate(records, start=1):
+        listBox.insert("", "end", values=(id, stname, course, fee))
+        mysqldb.close()
 
 
 root = Tk()
-root.title("Calculator")
-root.geometry('361x381+500+200')
-val = ""
-data = StringVar()
-display = Entry(root, textvariable=data, bd=29, bg="Powder blue", justify="right", font=("Arial", 20))
-# Border
-display.grid(row=0, columnspan=4)
+root.geometry("800x500")
+global e1
+global e2
+global e3
+global e4
 
-# First row
-btn7 = Button(root, text="7", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(7))
-btn7.grid(row=1, column=0)
+tk.Label(root, text="Employee\nRegistration", fg="Red", font=(None, 30)).place(x=400, y=5)
 
-btn8 = Button(root, text="8", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(8))
-btn8.grid(row=1, column=1)
+tk.Label(root, text="Employee ID").place(x=10, y=10)
+Label(root, text="Employee Name").place(x=10, y=40)
+Label(root, text="Mobile").place(x=10, y=70)
+Label(root, text="Salary").place(x=10, y=100)
 
-btn9 = Button(root, text="9", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(9))
-btn9.grid(row=1, column=2)
+e1 = Entry(root)
+e1.place(x=140, y=10)
 
-btn_add = Button(root, text="+", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick('+'))
-btn_add.grid(row=1, column=3)
+e2 = Entry(root)
+e2.place(x=140, y=40)
 
-#############
+e3 = Entry(root)
+e3.place(x=140, y=70)
 
-btn4 = Button(root, text="4", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(4))
-btn4.grid(row=2, column=0)
+e4 = Entry(root)
+e4.place(x=140, y=100)
 
-btn5 = Button(root, text="5", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(5))
-btn5.grid(row=2, column=1)
+Button(root, text="Add", command=Add, height=3, width=13).place(x=30, y=130)
+Button(root, text="update", command=update, height=3, width=13).place(x=140, y=130)
+Button(root, text="delete", command=delete, height=3, width=13).place(x=250, y=130)
 
-btn6 = Button(root, text="6", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(6))
-btn6.grid(row=2, column=2)
+cols = ("id", "empname", "mobile", "salary")
+listBox = ttk.Treeview(root, columns=cols, show="headings")
 
-btn_sub = Button(root, text="-", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick('-'))
-btn_sub.grid(row=2, column=3)
+for col in cols:
+    listBox.heading(col, text=col)
+    listBox.grid(row=1, column=0, columnspan=2)
+    listBox.place(x=10, y=200)
 
-##############
-
-btn1 = Button(root, text="1", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(1))
-btn1.grid(row=3, column=0)
-
-btn2 = Button(root, text="2", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(2))
-btn2.grid(row=3, column=1)
-
-btn3 = Button(root, text="3", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(3))
-btn3.grid(row=3, column=2)
-
-btn_mul = Button(root, text="*", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick("*"))
-btn_mul.grid(row=3, column=3)
-
-##############
-
-btnc = Button(root, text="C", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=btnClear)
-btnc.grid(row=4, column=0)
-
-btn0 = Button(root, text="0", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick(0))
-btn0.grid(row=4, column=1)
-
-btn00 = Button(root, text="00", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick("00"))
-btn00.grid(row=4, column=2)
-
-btn_eql = Button(root, text="÷", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=btnEqual)
-btn_eql.grid(row=4, column=3)
-
-################
-
-btn_back = Button(root, text="<-", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick("<-"))
-btn_back.grid(row=5, column=0)
-
-btn_per = Button(root, text="%", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick("%"))
-btn_per.grid(row=5, column=1)
-
-btn_div = Button(root, text="÷", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=lambda: btnClick("÷"))
-btn_div.grid(row=5, column=2)
-
-btn_eql = Button(root, text="=", font=("Arial", 12, "bold"), bd=12, height=2, width=6, command=btnEqual)
-btn_eql.grid(row=4, column=3)
-
-
+show()
+listBox.bind('<Double-Button-1>', GetValue)  # double click on blue line highlight for getting value
 root.mainloop()

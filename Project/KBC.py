@@ -43,13 +43,13 @@ class Crorepati:
                     k += 1
                 print(f"5. Exit")
                 choice = int(input("Enter your choice:- "))
-                if i == 15:
+                if i == 15:  ############################
                     if choice == questions[i][-1]:
                         print(f"Congratulations! You won Rs.{prizes[-1]}")
                 elif choice == questions[i][-1]:
                     print(f"You won Rs.{prizes[i]}")
-                elif choice == 5:
-                    print(f"You won Rs.{prizes[i-1]}")
+                elif choice == 5:   ##########################
+                    print(f"You won Rs.{prizes[i - 1]}")
                     break
                 else:
                     if 0 <= i <= 5:

@@ -573,7 +573,7 @@ def Add():
         mycursor.execute(sql, val)
         mysqldb.commit()
         lastid = mycursor.lastrowid
-        messagebox.showinfo("information", "Employee inserted succesfully")
+        messagebox.showinfo("information", "Employee Added Successfully")
         e1.delete(0, END)
         e2.delete(0, END)
         e3.delete(0, END)
@@ -590,7 +590,7 @@ def update():
     studname = e2.get()
     coursename = e3.get()
     fee = e4.get()
-    mysqldb = mysql.connector.connect(host="localhost", user="root", password="root", database="Pyt71")
+    mysqldb = mysql.connector.connect(host="localhost", user="root", password="root", database="Pyt71A")
     mycursor = mysqldb.cursor()
 
     try:
@@ -616,7 +616,7 @@ def update():
 def delete():
     studid = e1.get()
 
-    mysqldb = mysql.connector.connect(host="localhost", user="root", password="root", database="Pyt71")
+    mysqldb = mysql.connector.connect(host="localhost", user="root", password="root", database="Pyt71A")
     mycursor = mysqldb.cursor()
 
     try:
@@ -640,7 +640,7 @@ def delete():
 
 
 def show():
-    mysqldb = mysql.connector.connect(host="localhost", user="root", password="root", database="Pyt71")
+    mysqldb = mysql.connector.connect(host="localhost", user="root", password="root", database="Pyt71A")
     mycursor = mysqldb.cursor()
     mycursor.execute("SELECT id,empname,mobile,salary FROM registration")
     records = mycursor.fetchall()

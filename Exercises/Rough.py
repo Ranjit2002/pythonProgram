@@ -126,8 +126,6 @@ def matrices_addition():
         print(res)
 
 
-matrices_addition()
-
 def transpose_matrix():
     a = [49, 68, 27,
          16, 65, 24,
@@ -149,7 +147,7 @@ def transpose_matrix():
 
 # transpose_matrix()
 
-print(f"Pin: {random.randint(1000, 9999)}")
+# print(f"Pin: {random.randint(1000, 9999)}")
 
 class encap:
     # _name = "Ranjit"
@@ -170,8 +168,8 @@ class new_enc(encap):
 
 
 a = new_enc("Ranjit", 21)
-a.show()
-a.new_show()
+# a.show()
+# a.new_show()
 
 
 class Employee:
@@ -224,4 +222,10 @@ def palindrome(string):
 #     print("Palindrome")
 # else:
 #     print("Not Palindrome")
+
+a = {1: 'Ranjit', 2: 'Elon', 3: 'Steve'}
+b = {4: 'Bill', 5: 'Mark', 6: 'Warren'}
+
+for i in a.keys():
+    print(i)
 

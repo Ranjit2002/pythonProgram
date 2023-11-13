@@ -17,7 +17,7 @@ class Dog(Animal):
         print(f"Breed: {self.breed}")
 
 
-class GolderRetriever(Dog):
+class GoldenRetriever(Dog):
     def __init__(self, name, color):
         super().__init__(name, 'Golden Retriever')
         self.color = color
@@ -27,6 +27,6 @@ class GolderRetriever(Dog):
         print(f"Color: {self.color}")
 
 
-a = GolderRetriever('Tommy', 'Black')
+a = GoldenRetriever('Tommy', 'Black')
 a.show()
-print(GolderRetriever.mro())
+print(GoldenRetriever.mro())

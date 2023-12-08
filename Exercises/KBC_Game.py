@@ -6,7 +6,7 @@ questions = [["When was Chandrayaan 3 launched?", "14 july,2023", "12 july,2023"
              ["Which is the tallest statue in the world?", "Statue of unity", "Statue of buddha", "Statue of liberty",
               "Statue of redeemer", 1],
              ["Which is the biggest country in the North American continent?", "USA", "Mexico", "Canada", "Cuba", 3],
-             ["Which is the fastest object made by humans?", "Parker solar probe", "Voyager 1", "New Horizons",
+             ["Which is the fastest object ever made by humans?", "Parker solar probe", "Voyager 1", "New Horizons",
               "Cassini probe", 1],
              ["Which is the brightest object in the universe?", "Pulsar", "UY scuti", "Neutron star", "Quasar", 4],
              ["Which is the most expensive thing ever made by humans?", "Pioneer 10", "International space station",

@@ -1,4 +1,5 @@
 import random
+
 class Eng_bank:
     def __init__(self):
         self.amount = 500000
@@ -59,7 +60,7 @@ class Eng_bank:
                     elif i == 5:
                         return True
                     else:
-                        print(f"You have {5-i} chance remaining")
+                        print(f"You have {5 - i} chance remaining")
                         i += 1
                         print("Oops wrong pin please try again\n")
                         continue
@@ -76,34 +77,39 @@ class Eng_bank:
                 print(type(ex))
                 print(ex)
 
-
     def account_balance(self):
         print(f"Your account balance is {self.amount} rupees\n")
-        
+
 
 if __name__ == '__main__':
     a = Eng_bank()
 
     while True:
-        print(f"1--> Select Account\n2--> Withdraw/Deposit\n3--> See account balance\n4--> Exit")
-        choice = int(input("Enter your choice:- "))
-        if choice == 1:
-            print()
-            b = a.account()
-            a.with_depo()
-            a.rem_sub(b)
-            print()
-        elif choice == 2:
-            print()
-            a.with_depo()
-            a.rem_sub(a.account())
-            print()
-        elif choice == 3:
-            print()
-            a.account_balance()
-            print()
-        elif choice == 4:
-            break
-        else:
-            print("\nPlease enter Number between 1 to 4")
-            continue
+        try:
+            print(f"1--> Select Account\n2--> Withdraw/Deposit\n3--> See account balance\n4--> Exit")
+            choice = int(input("Enter your choice:- "))
+            if choice == 1:
+                print()
+                b = a.account()
+                a.with_depo()
+                a.rem_sub(b)
+                print()
+            elif choice == 2:
+                print()
+                a.with_depo()
+                a.rem_sub(a.account())
+                print()
+            elif choice == 3:
+                print()
+                a.account_balance()
+                print()
+            elif choice == 4:
+                break
+            else:
+                print("\nPlease enter Number between 1 to 4\n")
+                continue
+        except Exception as e:
+            print('\n', type(e))
+            print(e, '\n')
+
+

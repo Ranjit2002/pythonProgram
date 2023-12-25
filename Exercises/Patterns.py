@@ -121,7 +121,6 @@ for i in range(1, n+1):
     for j in range(1, i+1):
         print(chr(64+j), end=" ")
     print()
-"""
 
 n = 7
 for i in range(1, n+1):
@@ -138,4 +137,17 @@ for i in range(1, n+1):
             print(chr(66), end=" ")
         elif i == 5 and j == 4:
             print(chr(67), end=" ")
+    print()
+"""
+
+# 1  3  6  9
+# 3  6  9
+# 6  9
+# 9
+
+rows = 4
+
+for i in range(rows):
+    for j in range(i, rows):
+        print((j + 1) * 3, end=" ")
     print()

@@ -7,7 +7,7 @@ class Dome:
         while True:
             try:
                 user = int(input("Enter a Number:- "))
-                computer = random.randrange(1, 4)
+                computer = random.randrange(1, 4)    # This will guess number between 1 to 3
                 s = "Stone"
                 p = "Paper"
                 sc = "Scissor"

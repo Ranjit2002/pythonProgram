@@ -155,14 +155,42 @@ def odd(n):
 # b = odd(a)
 # print(b)
 
-def palindrome(n):
-    to_lower = n.lower()
-    rev = to_lower[::-1]
-    return to_lower == rev
+# def palindrome(n):
+#     to_lower = n.lower()
+#     rev = to_lower[::-1]
+#     return to_lower == rev
+#
+#
+# a = str(input("Enter a string:- "))
+# if palindrome(a):
+#     print(f"{a} is a Palindrome string")
+# else:
+#     print(f"{a} is not a Palindrome string")
+
+def fibo(n):
+    a,b = 0,1
+    for i in range(n):
+        print(a)
+        a,b = b,a+b
 
 
-a = str(input("Enter a string:- "))
-if palindrome(a):
-    print(f"{a} is a Palindrome string")
-else:
-    print(f"{a} is not a Palindrome string")
+# fibo(20)
+
+# a = 1
+# i = 78
+# while a < 11:
+#     print(f"{i}X{a}={a*i}")
+#     a+=1
+#
+# print()
+#
+# a = 34
+# for i in range(1,11):
+#     print(f"{a}X{i}={a*i}")
+
+num1 = 3.2
+num2 = 6.8
+
+sum = num1 + num2
+
+print("The sum of {0} and {1} is {2}".format(num1, num2, sum))

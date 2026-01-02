@@ -11,9 +11,11 @@ for j in string:
 ch = random.choice(string)
 low = ch.lower()
 
+country = low[0].upper() + low[1:]
+
 while True:
     if i == 0:
-        print("Your chance has over")
+        print(f"Your chance has over\nThe country is {country}")
         break
     print(f"\nYou have only {i} chance to guess the country name:\n")
     a = str(input("Enter country:-"))
